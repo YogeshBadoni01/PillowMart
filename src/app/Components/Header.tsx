@@ -34,6 +34,7 @@ const Header = () => {
     const data = [
         {
           title: 'Product',
+          submenu:true,
           links: [
             { label: 'Product List', link: '/ProductList' },
             { label: 'Product Details', link: '/ProductDetails' },
@@ -41,6 +42,7 @@ const Header = () => {
         },
         {
           title: 'Pages',
+          submenu:true,
           links: [
             { label: 'Login', link: '/Login' },
             { label: 'Product Checkout', link: '/Checkout' },
@@ -52,6 +54,7 @@ const Header = () => {
     },
     {
         title: 'Blog',
+        submenu:true,
         links: [
               { label: 'Blog', link: '/Blog' },
               { label: 'Single Blog', link: '/SingleBlog' },
