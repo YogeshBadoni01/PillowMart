@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+   background: #fff !important;
+}
+
+.custom-transition {
+   transition: all 0.3s ease; /* Property, Duration, Timing Function */
+ }
+
+.container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+@media screen and (min-width: 576px) {
+   .container {
+      max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+   .container {
+      max-width: 720px;
+   }
+}
+@media screen and (min-width: 992px) {
+   .container {
+      max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+   .container {
+      max-width: 1170px;
+   }
+}
