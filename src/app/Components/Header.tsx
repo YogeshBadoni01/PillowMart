@@ -4,7 +4,7 @@ import Image from "next/image"
 import { AiOutlineClose } from "react-icons/ai"
 import {HiShoppingCart} from "react-icons/hi"
 import {FaBars} from "react-icons/fa"
-import {AiFillCaretRight,AiFillCaretDown} from "react-icons/ai"
+import {AiFillCaretRight,AiFillCaretDown,} from "react-icons/ai"
 import {AiOutlineSearch} from "react-icons/ai"
 import { Gruppo, Work_Sans } from "next/font/google"
 import { useEffect, useState } from "react"
@@ -17,12 +17,13 @@ const work_sans=Work_Sans({
     display:'swap',
     weight: ["100","200","300","400","500","600","700","800","900"],
 })
-const Header = () => {
+const Header = (Onsearch:any) => {
     const [navbar, setNavbar]=useState(false)
-    const [search, setSearch]=useState(false)
+    const [search, setSearch]=useState(true)
     const [Product, setProduct]=useState(false)
     const [Pages, setPages]=useState(false)
-    const [open, setOpen]=useState(false)
+    const [open, setOpen]=useState(true)
+    const [query, setQuery] = useState('');
     // const [Product, setProduct]=useState(false)
     // const [Page, setPage]=useState(false)
     // const [Blog, setBlog]=useState(false)
@@ -30,7 +31,11 @@ const Header = () => {
         setOpen(!open)
     }
 
-
+      
+        const handleSearch = () => {
+          onSearch(query);
+        };
+      
     const data = [
         {
           title: 'Product',
@@ -106,14 +111,12 @@ const Header = () => {
         
 <header className="fixed top-0 z-50 bg-white border-gray-200 w-full shadow-xl h-100px">
   <div className=" max-w-full-xl h-[100px] flex flex-nowrap  justify-between mx-auto py-4 px-2 md:px-[50px] xl:px-[80px]   text-xl relative">
-   
-
-                    <button  className="flex justify-center items-center text-gray-700 rounded-md w-12 outline-none focus:border-gray-400  lg:hidden" onClick={() => setNavbar(!navbar)}
-                    >
-                    {navbar ? (
-                         <AiOutlineClose/>
-                    ) : ( <FaBars  className=" h-[28px] w-[40px] z-50 "  style={{ color:Theme.colors?.primary?.[0] }} /> )}
-                    </button>
+   <button  className="flex justify-center items-center text-gray-700 rounded-md w-12 outline-none focus:border-gray-400  lg:hidden" onClick={() => setNavbar(!navbar)}
+            >
+            {navbar ? (
+                    <AiOutlineClose/>
+            ) : ( <FaBars  className=" h-[28px] w-[40px] z-50 "  style={{ color:Theme.colors?.primary?.[0] }} /> )}
+            </button>
 
             <Link href={"/"} className="flex items-center ">
                 <Image  src={"/image/Logo/logo.png"} className=" mr-3 xl:w-[250px] xxl:w-[300px] md:w-full w-[118px] " alt="Logo"  width={300} height={100}/>
@@ -129,7 +132,7 @@ const Header = () => {
                             <FaBars  />
                         ) : (<AiOutlineClose className="text-[#0054B7] h-[28px] w-[40px] z-50"/>  )}</button>
                     </div> */}
-                    <ul className="min-lg:static absolute m-auto left-0 right-0 md:top-0 top-24  flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row  md:mt-0 md:border-0 md:bg-white text-md md:text-lg  h-fit lg:h-full justify-evenly divide-y-2 gap-y-5  md:divide-none max-w-[626px] w-full items-start lg:items-center" style={{ color:Theme.colors?.primary?.[0] }}>
+                    <ul className="min-lg:static absolute m-auto left-0 right-0 md:top-0 top-24  z-50 flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row  md:mt-0 md:border-0 md:bg-white text-md md:text-lg  h-fit lg:h-full justify-evenly divide-y-2 gap-y-5  md:divide-none max-w-[626px] w-full items-start lg:items-center" style={{ color:Theme.colors?.primary?.[0] }}>
                         
                         <Link href="/" className="block  lg:px-2  md:bg-transparent text-[#000]" aria-current="page">
                             <li>
@@ -149,8 +152,18 @@ const Header = () => {
                                 Contact
                             </li>
                         </Link>
-                    <div className={`absolute top-[60px]  w-full  md:w-auto"  ${search ? 'p-12 md:p-0 block' : 'hidden'}`}>
-                        <Input placeholder="" className=" w-full" style={{ background:Theme.colors?.primary?.[0] }} />
+                    <div className={`hidden absolute top-[120px] px-5 w-[inherit] shadow-md  text-white  justify-between items-center"  ${!search ? 'lg:flex' : 'hidden'}`}>
+                        <input type="search" 
+                            placeholder="Search Here"
+                            value={query}
+                             onChange={(e) => setQuery(e.target.value)}
+                         className=" w-full bg-none  h-40px text-white px-1.5 outline-none placeholder-white " style={{ background:Theme.colors?.primary?.[0] }} />
+                          <button className="bgwhite" onClick={() => (setSearch(!search),
+                            {handleSearch},
+               )
+            }>{!search ? (
+                            <AiOutlineClose  className="text-white h-[28px] w-[40px] z-50" />
+                        ) : (<AiOutlineSearch className="text-white h-[28px] w-[40px] z-50" />  )}</button>
                     </div>
                     </ul>
                </div>
@@ -158,7 +171,9 @@ const Header = () => {
     
             
             <div className="mr-[30px] ">
-            <button  onClick={() => setSearch(!search)}>{!search ? (
+            <button  onClick={() => (setSearch(!search)
+               )
+            }>{!search ? (
                             <AiOutlineSearch  className="text-[#0054B7] h-[28px] w-[40px] z-50"style={{ color:Theme.colors?.primary?.[0] }} />
                         ) : (<AiOutlineSearch className="text-[#0054B7] h-[28px] w-[40px] z-50"style={{ color:Theme.colors?.primary?.[0] }} />  )}</button>
             </div>
@@ -166,6 +181,20 @@ const Header = () => {
                  <Link href={"/"} className="text-black relative"><HiShoppingCart className="text-2xl "/> <span className="absolute right-0 top-0 rounded-full text-xs bg-red-700 text-white p-i inline-block">0</span></Link>
             </div>
         </div>
+        {/* mobile serach */}
+        <div className={`lg:hidden absolute top-[120px] z-10 w-full m-auto py-5 text-white flex justify-between items-center"  ${open&& !search ? 'p-12 md:p-0 block' : 'hidden'}`}>
+        <input type="search" 
+                            placeholder="Search Here"
+                            value={query}
+                             onChange={(e) => setQuery(e.target.value)}
+                         className=" w-full bg-none  h-40px text-white px-1.5 outline-none placeholder-white " style={{ background:Theme.colors?.primary?.[0] }} />
+                          <button className="bgwhite" onClick={() => (setSearch(!search),
+                            {handleSearch},
+               )
+            }>{!search ? (
+                            < AiOutlineClose className="text-white h-[28px] w-[40px] z-50" />
+                        ) : (< AiOutlineSearch className="text-white h-[28px] w-[40px] z-50" />  )}</button>
+                    </div>
   </div>
 </header>
     </>
