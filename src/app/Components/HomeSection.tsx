@@ -17,7 +17,7 @@ const HomeSection = () => {
                             <img src="image/home/Section/single_product_1.png" alt="" />
                         </div>
                     </div>
-                    <div className=" text md:w-2/5 px-[15px] mt-[80px] md:mt-0">
+                    <div className=" text md:w-2/5 px-[15px] mt-[150px] md:mt-[80px]">
                         <h5 className='text-xl font-medium' style={{ color:Theme.colors?.primary?.[3] }}>Started from $10</h5>
                         <h2 className='mt-[10px] mb-[50px] '>
                             <Link href="" className='xl:text-[40px] lg:text-[30px] text-[25px] ' style={{ color:Theme.colors?.primary?.[1] }}>
@@ -31,7 +31,7 @@ const HomeSection = () => {
                 </div>
 
                 <div className=" flex justify-between items-center mb-[100px] md:flex-row flex-col">
-                    <div className="order-last md:order-first text md:w-2/5 px-[15px] mt-[80px] md:mt-0">
+                    <div className="order-last md:order-first text md:w-2/5 px-[15px] mt-[150px] md:mt-[80px] ">
                         <h5 className='text-xl font-medium' style={{ color:Theme.colors?.primary?.[3] }}>Started from $10</h5>
                         <h2 className='mt-[10px] mb-[50px] '>
                             <Link href="" className='xl:text-[40px] lg:text-[30px] text-[25px]' style={{ color:Theme.colors?.primary?.[1] }} >
@@ -61,7 +61,7 @@ const HomeSection = () => {
                             <img src="image/home/Section/single_product_3.png" alt="" />
                         </div>
                     </div>
-                    <div className="text md:w-2/5 px-[15px] mt-[80px] md:mt-0">
+                    <div className="text md:w-2/5 px-[15px]  mt-[150px] md:mt-[80px]">
                         <h5 className='text-xl font-medium' style={{ color:Theme.colors?.primary?.[3] }}>Started from $10</h5>
                         <h2 className='mt-[10px] mb-[50px] '>
                             <Link href="" className='xl:text-[40px] lg:text-[30px] text-[25px] ' style={{ color:Theme.colors?.primary?.[1] }}>
