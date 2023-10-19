@@ -19,7 +19,6 @@ const SubMenu = (props:any) => {
         // {console.log(group)}
         const links = group.links.map((link:any, index:any) => (
           <Text key={index} component="a" href={link.link} onClick={(event) => event.preventDefault()}>
-            
             <Link href={link.link} className="block  py-2 px-5 ">
                 {link.label}
             </Link>
@@ -43,8 +42,8 @@ const SubMenu = (props:any) => {
                         </h3>
                         {
                             group.submenu && (
-                                
-                        <div  className={`relative md:absolute md:-left-8 md:top-[50px] top-[5px]  w-max z-50   max-w-md overflow-hidden rounded-md ml-6 shadow-lg text-white ring-1 ring-gray-900/5 h-fit  ${!open && heading === group.title ? ' md:p-0 block' : 'hidden'}`} style={{ background:Theme.colors?.primary?.[0] }} >
+
+                        <div   className={`relative md:absolute md:-left-8 md:top-[50px] top-[5px]  w-max z-50   max-w-md overflow-hidden rounded-md ml-6 shadow-lg text-white ring-1 ring-gray-900/5 h-fit  ${!open && heading === group.title ? ' md:p-0 block' : 'hidden'}`} style={{ background:Theme.colors?.primary?.[0] }} >
                             <div className="py-2   ">
                                 <div className="group relative flex items-center gap-x-6 rounded-lg  text-sm leading-6 ">
                                     <div className="flex-auto">

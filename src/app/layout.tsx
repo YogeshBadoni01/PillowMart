@@ -7,6 +7,7 @@ import {MantineProvider} from '@mantine/core'
 import {Theme} from './Theme/Theme'
 // import '@mantine/core/dist/styles.css';
 import { Rubik } from 'next/font/google'
+import '../../node_modules/@mantine/core/esm/index.css'
 
 
 const rubik = Rubik({ subsets: ['latin'] })

@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { Theme } from '../Theme/Theme'
 import { Form ,useForm} from '@mantine/form'
 import BillingDetails from '../Components/BillingDetails';
+import CheckOutLogin from '../Components/CheckOutLogin';
+import CheckBoxCoupen from '../Components/CheckBoxCoupen';
 const ProductCheckout = () => {
     const form = useForm({
         initialValues: { name: '', password: '', remember: true },
@@ -36,7 +38,7 @@ const ProductCheckout = () => {
                     <p className='mt-[15px] mb-[25px] leading-[21px] pl-[30px]'>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer, please proceed to the Billing & Shipping section. </p>
                 </div>
 
-                <div className="w-2/3 ml-[15px]">
+                {/* <div className="w-2/3 ml-[15px]">
                     <form  className='h-full flex flex-col justify-center '   onSubmit={form.onSubmit(() => {})}>
                     <div className="flex justify-between gap-0">
                         <input type="text" name="price" id="name" className="mx-3 px-3 py-[6px] mb-[16px] text-[16px] block w-full  border    placeholder:text-gray-400 focus:ring-2 focus:ring-inset outline-none  sm:text-sm sm:leading-6" placeholder="UserName"  {...form.getInputProps('name')}></input>
@@ -62,9 +64,10 @@ const ProductCheckout = () => {
                         <Link href="#!" className='text-right mb-4 pl-[30px]' style={{color:Theme.colors?.primary?.[1]}}>Lost your password?</Link>
                     </div>
                     </form>
-                </div>  
+                </div>   */}
+                <CheckOutLogin/>
                 
-                <div className="mb-10">
+                {/* <div className="mb-10">
                     <h2 style={{background:Theme.colors?.textBg?.[0],color:Theme.colors?.primary?.[1],lineHeight:('28px')}} className='p-3 pl-[30px] '>
                         Have a coupon?
                         <Link href={"/Login"} style={{color:Theme.colors?.primary?.[0]}} className='underline'> click here to enter your coupan code</Link>
@@ -74,8 +77,9 @@ const ProductCheckout = () => {
                         <button type="submit"  className=' px-10 ml-[30px] py-3  bg-transparent border   text-[#b08ead hover:text-white hover:bg-[#b08ead] rounded-full ' >
                         Apply coupan</button>
                     </div>
-                </div>
+                </div> */}
                  
+                 <CheckBoxCoupen/>
                 
                 <BillingDetails />
                 

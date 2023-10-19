@@ -7,10 +7,10 @@ import {FaBars} from "react-icons/fa"
 import {AiFillCaretRight,AiFillCaretDown,} from "react-icons/ai"
 import {AiOutlineSearch} from "react-icons/ai"
 import { Gruppo, Work_Sans } from "next/font/google"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import {Theme } from '../Theme/Theme'
 import { NavLink,Input, Text } from '@mantine/core';
-import SubMenu from "./submenu"
+import SubMenu from "./SubMenu"
 // import { Input } from "postcss"
 const work_sans=Work_Sans({
     subsets:['latin'],
@@ -24,17 +24,31 @@ const Header = (Onsearch:any) => {
     const [Pages, setPages]=useState(false)
     const [open, setOpen]=useState(true)
     const [query, setQuery] = useState('');
+    const dropdownRef = useRef(null);
     // const [Product, setProduct]=useState(false)
     // const [Page, setPage]=useState(false)
     // const [Blog, setBlog]=useState(false)
     const toggle=()=>{
         setOpen(!open)
     }
-
+    // const handleClickOutside = (e) => {
+    //     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+    //       setOpen(false);
+    //     }
+    //   };
+    
       
         const handleSearch = () => {
           onSearch(query);
         };
+        // useEffect(() => {
+        //     document.addEventListener('mousedown', handleClickOutside);
+        //     return () => {
+        //       document.removeEventListener('mousedown', handleClickOutside);
+        //     };
+        //   }, []);
+
+         
       
     const data = [
         {
@@ -145,26 +159,14 @@ const Header = (Onsearch:any) => {
                             About
                         </li>
                         </Link>
-                        <SubMenu data={data}  />
+                        <SubMenu data={data} ref={dropdownRef} className="dropdown" />
                         {/* {groups} */}
                         <Link href="/Contect" className="block  lg:px-2  md:bg-transparent text-[#000]" aria-current="page">
                             <li>
                                 Contact
                             </li>
                         </Link>
-                    <div className={`hidden absolute top-[120px] px-5 w-[inherit] shadow-md  text-white  justify-between items-center"  ${!search ? 'lg:flex' : 'hidden'}`}>
-                        <input type="search" 
-                            placeholder="Search Here"
-                            value={query}
-                             onChange={(e) => setQuery(e.target.value)}
-                         className=" w-full bg-none  h-40px text-white px-1.5 outline-none placeholder-white " style={{ background:Theme.colors?.primary?.[0] }} />
-                          <button className="bgwhite" onClick={() => (setSearch(!search),
-                            {handleSearch},
-               )
-            }>{!search ? (
-                            <AiOutlineClose  className="text-white h-[28px] w-[40px] z-50" />
-                        ) : (<AiOutlineSearch className="text-white h-[28px] w-[40px] z-50" />  )}</button>
-                    </div>
+                   
                     </ul>
                </div>
             </div>
@@ -182,13 +184,13 @@ const Header = (Onsearch:any) => {
             </div>
         </div>
         {/* mobile serach */}
-        <div className={`lg:hidden absolute top-[120px] z-10 w-full m-auto py-5 text-white flex justify-between items-center"  ${open&& !search ? 'p-12 md:p-0 block' : 'hidden'}`}>
+        <div className={` absolute top-[100px] z-10 w-auto left-0 right-0 m-auto px-[15px] mx-[50px] text-white flex justify-between items-center"  ${open&& !search ? ' block' : 'hidden'}`} style={{ background:Theme.colors?.primary?.[0] }}>
         <input type="search" 
                             placeholder="Search Here"
                             value={query}
                              onChange={(e) => setQuery(e.target.value)}
-                         className=" w-full bg-none  h-40px text-white px-1.5 outline-none placeholder-white " style={{ background:Theme.colors?.primary?.[0] }} />
-                          <button className="bgwhite" onClick={() => (setSearch(!search),
+                         className=" w-full bg-none  h-[46px] text-white px-1.5 outline-none placeholder-white " style={{ background:Theme.colors?.primary?.[0] }} />
+                          <button className="bgwhite " style={{ background:Theme.colors?.primary?.[0] }} onClick={() => (setSearch(!search),
                             {handleSearch},
                )
             }>{!search ? (

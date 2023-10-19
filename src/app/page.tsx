@@ -5,7 +5,7 @@ import Review from "./Components/Review";
 import OrganicSource from "./Components/OrganicSource";
 import Promotions from "./Components/Promotions";
 
-// import '../../node_modules'
+// import '../../node_modules/@mantine/form/*'
 
 
 

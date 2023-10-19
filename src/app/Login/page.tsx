@@ -6,7 +6,7 @@ import { NumberInput, TextInput, Button, Box } from '@mantine/core';
 import LoginFrom from '../Components/Login';
 import myButton from '../Components/myButton';
 import { Theme } from '../Theme/Theme';
-
+import Temp from '../Components/Temp'
 const Login = () => {
   return (
     <>
@@ -30,7 +30,7 @@ const Login = () => {
                         </div>
                         <div className="  px-3 h-full md:w-1/2">
                             <div className=" lg:py-20 lg:px-[70px] ">
-                                <h3 className='lg:mb-[60px] mb-5 max-xl:[80px] text-[27px] font-bold leading-9'>
+                                <h3 className='lg:mb-[60px] mb-5 max-xl:[80px] text-[27px] font-bold leading-9'style={{color:Theme.colors?.primary?.[1]}}>
                                     Welcome Back ! 
                                 <br />
                                     Please Sign in now
