@@ -48,7 +48,7 @@ export default function BlogPost() {
     <div className="">
       {
         post.map((items,index)=>(
-          <Card shadow="sm" padding="lg" radius="md" className='mb-[50px]' withBorder key={index}>
+          <Card shadow="sm" radius="md" className='mb-[50px] border-none p-0'  key={index}>
             <Card.Section>
               <Image
                 src={items.img}
@@ -56,14 +56,14 @@ export default function BlogPost() {
                 alt="Norway"
               />
             </Card.Section>
-              <div className="px-[35px] pt-[60px] pb-[30px] relative">
+              <div className="pl-2.5 md:px-[35px] pt-[30px] md:pt-[60px] md:pb-[30px] pb-[20px] relative">
 
-                  <Group justify="space-between" mt="md" mb="xs">
+                  <Group justify="space-between" >
                       <h2  className='font-semibold md:text-[24px] text-[18px] mb-[15px]' style={{color:Theme.colors?.primary?.[3]}} onMouseEnter={()=>{
                     color:Theme.colors?.primary?.[3]
                   }} >{items.Heading}</h2>
-                      <div className="absolute left-5 -top-20  z-10  py-[13px] px-[30px] rounded-md" style={{background:Theme.colors?.primary?.[0]}}>
-                          <Link href="#" className=' text-3xl font-semibold text-center text-white'  >
+                      <div className="absolute left-5 -top-20  z-10  md:py-[13px] md:px-[30px] py-2 px-[15px] rounded-md" style={{background:Theme.colors?.primary?.[0]}}>
+                          <Link href="#" className='text-[14px] md:text-3xl font-semibold text-center text-white'  >
                               <h3 className='leading-9'>15</h3> <p>jan</p>
                           </Link>
                       </div>  
@@ -74,7 +74,7 @@ export default function BlogPost() {
                   </p>
 
                   <div className="">
-                    <ul className='divide-x-2 divide-black divide- flex items-center'>
+                    <ul className='sm:divide-x-2 divide-black  flex items-center flex-wrap'>
                       <li className='px-2.5'>
                         <Link href="" className='flex items-center'>
                         <CiUser className="mr-[5px]"/>

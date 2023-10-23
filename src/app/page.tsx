@@ -12,7 +12,7 @@ import Promotions from "./Components/Promotions";
 export default function Home() {
   return (
    <>
-    <div className=" bg-white mt-[100px]">
+    <div className=" bg-white mt-[100px] transition-transform">
       
         <Hero/>
         <HomeSection/>

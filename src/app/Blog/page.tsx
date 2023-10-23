@@ -12,10 +12,10 @@ const Blog = () => {
           <div className="container">
           <div className="flex lg:flex-row flex-col">
 
-                <div className="lg:w-2/3 w-full px-[15px]">
+                <div className="lg:w-2/3 w-full md:px-[15px]">
                   <BlogPost/>
                 </div>
-                <div className="lg:w-1/3 w-full px-[15px]">
+                <div className="lg:w-1/3 w-full md:px-[15px]">
                   <Side/> 
                 </div>
           </div>

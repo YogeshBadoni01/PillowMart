@@ -1,7 +1,7 @@
 import { useDisclosure } from '@mantine/hooks';
 import { LoadingOverlay, Button, Group, Box } from '@mantine/core';
 
-function Demo() {
+function Loading() {
   const [visible, { toggle }] = useDisclosure(false);
 
   // Note that position: relative is required
@@ -18,3 +18,4 @@ function Demo() {
     </>
   );
 }
+export default Loading
