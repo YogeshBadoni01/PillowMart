@@ -59,9 +59,9 @@ export default function BlogPost() {
               <div className="px-[35px] pt-[60px] pb-[30px] relative">
 
                   <Group justify="space-between" mt="md" mb="xs">
-                      <Text fw={600} className='md:text-[24px] text-[18px] mb-[15px]' style={{color:Theme.colors?.primary?.[3]}} onMouseEnter={()=>{
+                      <h2  className='font-semibold md:text-[24px] text-[18px] mb-[15px]' style={{color:Theme.colors?.primary?.[3]}} onMouseEnter={()=>{
                     color:Theme.colors?.primary?.[3]
-                  }} >{items.Heading}</Text>
+                  }} >{items.Heading}</h2>
                       <div className="absolute left-5 -top-20  z-10  py-[13px] px-[30px] rounded-md" style={{background:Theme.colors?.primary?.[0]}}>
                           <Link href="#" className=' text-3xl font-semibold text-center text-white'  >
                               <h3 className='leading-9'>15</h3> <p>jan</p>
@@ -69,20 +69,20 @@ export default function BlogPost() {
                       </div>  
                   </Group>
 
-                  <Text size="sm" c="dimmed" className='mb-[30px] leading-[30px] ' style={{color:Theme.colors?.primary?.[0]}} >
+                  <p   className='mb-[30px] leading-[30px] ' style={{color:Theme.colors?.primary?.[0]}} >
                      {items.Subheading}
-                  </Text>
+                  </p>
 
                   <div className="">
-                    <ul className='divide-x-2 divide-black divide- flex'>
+                    <ul className='divide-x-2 divide-black divide- flex items-center'>
                       <li className='px-2.5'>
-                        <Link href="" className='flex'>
+                        <Link href="" className='flex items-center'>
                         <CiUser className="mr-[5px]"/>
                         {items.bottomList1}
                         </Link>
                       </li>
                       <li className='px-2.5'>
-                        <Link href="" className='flex'>
+                        <Link href="" className='flex items-center'>
                         <FaRegComments className="mr-[5px] "/>
                         {items.bottomList2}
                         </Link>
